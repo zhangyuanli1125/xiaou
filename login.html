@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登录页面</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/iconfont.css">
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/regsiter.css">
+    <script src="./js/jquery.js"></script>
+    <script src="./js/login.js"></script>
+</head>
+<body>
+    <div class="wrap">
+        <div class="head">
+            <img src="images/xiaou.jpg" alt="logo">
+            <span></span>
+            <p>欢迎注册</p>
+        </div>
+        <div class="login_body">
+            <div class="form_box">
+                <div class="box1">
+                     <div class="box_wrap">
+                            <h3>登录</h3>
+                            <div class="clearfix text">
+                                <span class="fl iconfont icon-email"></span><input type="text" placeholder="请输入邮箱" class="fl uname" name="uname">
+                            </div>
+                        
+                            <div class="clearfix text2 text">
+                                <span class="fl iconfont icon-suo"></span><input type="password" placeholder="请输入密码" class="fl upass" name="upass">  
+                            </div>
+                        
+                            <div class="text2 text text3">
+                                <input type="text" placeholder="请输入验证码" class="code"><span class="sp"><img src="http://localhost:3001/user/svg" alt="" width="100%" height="100%"></span>
+                            </div>
+                            <button class="btn"><a href="javascript:;">登录</a> </button>
+                            <div class="text4">
+                                <div>
+                                    <form action="#">
+                                        <input type="checkbox" checked>自动登录
+                                    </form>     
+                                </div> 
+                                <p><a href="javascript:;" target="_blank">忘记密码</a></p>
+                             </div>
+                     </div> 
+                </div>
+                <hr>
+                <div class="clearfix zuihou">
+                   <div class="fl dian">
+                        <div></div>QQ
+                        <div></div>微博
+                        <div></div>微信 
+                   </div>
+                   <p class="fr"><a href="javascript:;" target="_blannk">立即注册</a></p>
+                </div> 
+            </div>
+        </div>
+        <div class="foot">
+            <p>copyright&copy;2010-2016 小u商城 版权所有 保留一切权利 </p>
+            <p>京ICP备20182138号 京ICP证161188号 京公安网备108364524245 出版物经营许可证新出发京批字第直130052号</p>
+        </div>
+    </div>
+   <script>
+       $('.sp img').on('click',function(){
+           this.src=`http://localhost:3001/user/svg?id=${new Date().getTime()}`
+       })
+       $('.btn').on('click',function(){
+           let uname=$('.uname').val()
+           let upass=$('.upass').val()
+           let code=$('.code').val()
+           $.ajax({
+               type:'post',
+               url:"http://localhost:3001/user/login",
+               data:{
+                   uname,
+                   upass,
+                   code
+               },
+               xhrFields:{
+                    withCredentials: true
+                 },
+                 success:function(response){
+                     if(response.code){
+                         alert(response.msg)
+                     }else{
+                         location.href='./index.html'
+                     }
+                 }
+           })
+       })
+   </script>
+</body>
+</html>

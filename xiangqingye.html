@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>详情页</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/xiangqingye.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/iconfont.css">
+    <link rel="stylesheet" href="css/list.css">
+    <script src="./js/jquery.js"></script>
+    <script src="./js/art-template.js"></script>
+    <script src="./js/ajax.js"></script>
+    <script src="./js/index.js"></script>
+    <script src="./js/xiangqing.js"></script>
+</head>
+<body>
+    <div class="wrap">
+        <div class="box">
+             <!-- 这是导航开始 -->
+             <div class="nav " name="nav">
+                 <div class="navbox">
+                    <!-- 导航左边 -->
+                                    <ul class="left fl">
+                                        <li><a href="javascript:;" target="_self">网站导航<span class="iconfont icon-xiangxiajiantou"></span></a></li>
+                                        <li><a href="javascript:;" target="_self">商家入驻<span class="iconfont icon-xiangxiajiantou"></span></a></li>
+                                        <li><a href="javascript:;" target="_self">客户服务<span class="iconfont icon-xiangxiajiantou"></span></a></li>
+                                        <li><a href="javascript:;" target="_self"><span class="iconfont icon-icon-test"></span>北京<span class="iconfont icon-arrow_down_full"></span></a></li>
+                                    </ul>
+                                    <!-- 导航右边 -->
+                                    <ul class="right fr">  
+                                        <li><a href="javascript:;" target="_self">手机小u<span class="iconfont icon-xiangxiajiantou"></span></a></li>
+                                        <li><a href="javascript:;" target="_self">企业采购</a></li>
+                                        <li><a href="javascript:;" target="_self">易付宝</a></li>
+                                        <li><a href="javascript:;" target="_self" class="color"><span class="iconfont icon-gouwuche"></span>购物车0<span class="iconfont color icon-xiangxiajiantou"></span></a></li>
+                                        <li><a href="javascript:;" target="_self">小u会员</a></li>
+                                        <li><a href="javascript:;" target="_self">我的易购<span class="iconfont icon-xiangxiajiantou"></span></a></li>
+                                        <li><a href="javascript:;" target="_self">我的订单<span class="iconfont icon-xiangxiajiantou"></span></a></li>
+                                        <li><a href="javascript:;" target="_self" class="color">注册有礼</a></li>
+                                        <li><a href="javascript:;" target="_self">请登录</a></li>
+                                    
+                                    </ul>
+                 </div>
+               
+      
+            </div>
+            <!-- 这是导航结束 -->
+            <!-- 这是头部开始 -->
+            <div class="head">
+                <!-- 头部顶端 -->
+                <div class="top">
+                    <div class="left">
+                         <h1><a href="javascript:;" title="小u商城">小U商城-低价正品，品质保证</a></h1>
+                    </div>
+                    <div class="right"> 
+                        <div class="input">
+                            <div class="iconfont icon-sousuo"></div>
+                            <form action="javascript:;"> <input type="text" value="跨店满300减30"><button>搜索</button></form>
+                           
+                        </div> 
+                        <div class="wen"></div>
+                        <script type="text/html" id="search_hot">
+                           {{each data value}}
+                           <span><a href="javascript:;">{{value.search_text}}</a></span>
+                           {{/each}}
+                       </script>    
+                    </div>           
+                </div>
+                <!-- 头部底端 -->
+                <div class="bottom">
+                    <ul class="clearfix">
+                        <li class="li1"><a href="javascript:;" target="_self"><span class="iconfont icon-liebiao"></span>全部商品分类</a>
+                            <div class="hover active">  </div>
+                            <!-- <p><a href="javascript:;" target="_self">手机</a><a href="javascript:;" target="_self">运营商</a><a href="javascript:;" target="_self">智能数码</a></p>
+                            -->
+                      <script type="text/html" id="yijidaohang">
+                        {{each data value}}
+                        <a href="javascript:;">{{value.first_name}}</a>
+                        {{/each}}
+                    </script>
+
+                        </li>
+                        <li><a href="javascript:;" target="_self">限时抢购</a></li>
+                        <li><a href="javascript:;" target="_self">红孩子</a></li>
+                        <li><a href="javascript:;" target="_self">小u超市</a></li>
+                        <li><a href="javascript:;" target="_self">生活家电</a></li>
+                        <li><a href="javascript:;" target="_self">时装服饰</a></li>
+                        <li><a href="javascript:;" target="_self">金融</a></li>
+                        
+                    </ul>
+                    
+ 
+                </div>
+            </div>
+            <hr>
+            <!-- 这是头部结束 -->
+            <!-- 中间部分 -->
+            <div class="body">
+                <div class="body_head">
+                    <ul>
+                        <li><a href="javascript:;" target="_self">首页<span>></span></a></li>
+                        <li><a href="javascript:;" target="_self">家用电器<span>></span></a></li>
+                        <li><a href="javascript:;" target="_self">电视机<span>></span></a></li>
+                        <li><a href="javascript:;" target="_self">创维（SKYWORTH）<span>></span></a></li>
+                        <li><a href="javascript:;" target="_self">创维（SKYWORTH）平板电视</a></li>
+                       
+                    </ul>
+
+                </div>
+                <div class="xiangqingbody_content clearfix">
+                    <div class="body_content_left fl">
+                        <div><img src="images/xiangqiangye_03.png" alt=""></div>
+                        <div class="body_content_left_top">
+                            <a href="javascript:;" target="_self"><img src="images/xiangqiangye_07.png" alt=""></a><span></span>
+                            <a href="javascript:;" target="_self"><img src="images/xiangqiangye_09.png" alt=""></a><span></span>
+                            <a href="javascript:;" target="_self"><img src="images/xiangqiangye_11.png" alt=""></a><span></span>
+                            <a href="javascript:;" target="_self"><img src="images/xiangqiangye_13.png" alt=""></a>
+                       </div>
+                        <div classbody_content_left_middle>
+                        <div class="sousuo"><a href="javascript:;" target="_self"><span class="iconfont icon-sousuo"></a></span></div>
+                        <div class="body_content_left_bottom">
+                            
+                                <a href="javascript:;" target="_self" class="fl"><span ><</span></a>
+                                <div><a href="javascript:;" target="_self"><img src="images/xiangqiangye_20.png" alt=""></a></div>
+                                <div><a href="javascript:;" target="_self"><img src="images/xiangqiangye_20.png" alt=""></a></div>
+                                <div><a href="javascript:;" target="_self"><img src="images/xiangqiangye_22.png" alt=""></a></div>
+                                <div><a href="javascript:;" target="_self"><img src="images/xiangqiangye_25.png" alt=""></a></div>
+                                <div><a href="javascript:;" target="_self"><img src="images/xiangqiangye_27.png" alt=""></a></div>
+                                <a href="javascript:;" target="_self" class="fl"><span class="fl">></span></a>
+                        
+                     </div>
+                    </div>
+                    </div>
+                    <div class="body_content_right fr">
+                        <div><p>创维 （SKYWORTH）60G20  60英寸 电视 人工智能 4K超画质芯片 HDR10 智能网络 超薄全面屏 液晶平板电视机</p>
+                        <p>【门店同款】立即抢购 ！ 9号不高于3199 ！前200名晒单送1399元JBL重低音 ！下单送苹果华为通用蓝牙耳机！
+                            旗舰声控电视，可家电互联.咨询客户有惊喜 全国联保 官方正品<a href="javascript:;" target="_self">点击查看活动详情</a></p></div>
+                        
+                            <div class="clearfix" >
+                                <div class="body_middle_left fl">
+                                    <p>促 销 价<span>￥3199.00</span><span></span><span>降价通知</span></p>
+                                    <p>累计评价<a href="javascript:;" target="_self">7800+</a></p>
+                                    <p>运&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 费  <span>满19包邮</span></p>
+
+                                </div>
+                                <div  class="body_middle_right fr">
+                                       <span class="iconfont icon-xingxing1"><span>收藏</span></span>
+                                       <span class="iconfont icon-xingxing"><span>收藏</span></span>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="diyige">
+                                    <span>选择型号</span>
+                                    <div class="bianse">  
+                                    <span><a href="javascript:;" target="_self" class="k">4k超大屏人工智能新品 -70G20</a></span>
+                                     <span><a href="javascript:;" target="_self">全生态AI旗舰智慧屏新品 55-H90</a></span>
+                                     <span><a href="javascript:;" target="_self">全生态AI高端智慧屏新品-55A8</a></span>
+                                     <span><a href="javascript:;" target="_self">全生态AI声控智慧屏 55A5</a></span>
+                                     </div>
+                                    
+                                </div>
+                                <div class=" dierge">
+                                     <span class="goumai">购买数量</span>
+                                     <div class="clearfix">
+                                        <span class="fl"><a href="javascript:;" target="_self">-</a></span>
+                                        <span class="fl"><a href="javascript:;" target="_self">1</a></span>
+                                        <span class="fl"><a href="javascript:;" target="_self">+</a></span>
+                                     </div>
+                                 
+                                     
+                                </div>
+                                    <div class="disange">
+                                        <span><a href="javascript:;" target="_self"><span class="iconfont icon-jiarugouwuche"></span>加入购物车</a></span>
+                                        <span><a href="javascript:;" target="_self">立即购买</a></span>
+                                    </div>
+                            </div>
+                            <div>
+
+                            </div>
+                    </div>
+               
+            </div>
+           
+             </div>
+             <!-- 内容部分 -->
+             <div class="content">
+                 <div class="content_box">
+               
+                     <div class="list_cont_two clearfix">
+                    <div class="two_left fl">
+                      <div class="two_box">
+                        <h3>商品推荐</h3>
+                        <div class="two_item">
+                            <div><img src="images/list_03.png" alt=""></div>
+                            
+                            <p>海信(Hisense)</p>
+                            <p>LED55EC760UC 55英寸曲面</p>
+                            <span>¥4999.00</span>
+    
+                        </div>
+                        <div class="two_item">
+                            <div><img src="images/list_03.png" alt=""></div>
+                            
+                            <p>海信(Hisense)</p>
+                            <p>LED55EC760UC 55英寸曲面</p>
+                            <span>¥4999.00</span>
+    
+                        </div>
+                        <div class="two_item">
+                            <div><img src="images/list_03.png" alt=""></div>
+                            
+                            <p>海信(Hisense)</p>
+                            <p>LED55EC760UC 55英寸曲面</p>
+                            <span>¥4999.00</span>
+    
+                        </div>
+                        <div class="two_item">
+                            <div><img src="images/list_03.png" alt=""></div>
+                            
+                            <p>海信(Hisense)</p>
+                            <p>LED55EC760UC 55英寸曲面</p>
+                            <span>¥4999.00</span>
+    
+                        </div>
+                        <div class="two_item">
+                            <div><img src="images/list_03.png" alt=""></div>
+                            
+                            <p>海信(Hisense)</p>
+                            <p>LED55EC760UC 55英寸曲面</p>
+                            <span>¥4999.00</span>
+    
+                        </div>
+                      </div>
+                      
+                  </div>
+                  <div class="two_right fr">
+                     <div class="two_right_header">
+                        <div class="header_one">
+                            <div class="header_one_left fl">
+                                 <span class="fl"><a href="javascript:;" target="_self">商品介绍</a><span></span></span>
+                                 <span class="fl"><a href="javascript:;" target="_self">商品评论<span>(7000+)</span></a><span></span></span>
+                                 <span class="fl"><a href="javascript:;" target="_self">售后保障</a><span></span></span>
+                            </div>
+                            <div class="header_one_right fr">
+                                <span><a href="javascript:;" target="_self"><span class="iconfont icon-jiarugouwuche"></span>加入购物车</a></span>
+                                
+                            </div>
+                            
+                        </div>
+                        <div class="header_two">
+                             <dl class="fl">
+                                 <dt>产品参数</dt>
+                                 <dd>商品名称：创维（SKyworth）60G20</dd>
+                                 <dd>商品毛重：20.0KG</dd>
+                                 <dd>屏幕尺寸：58-60英寸</dd>
+                                 <dd>连接方式：无线、网络</dd>
+                                 <dd>能效等级：三级能效</dd>
+                             </dl>
+                             <dl class="fl">
+                                <dt></dt>
+                                <dd>产品名称：54611111111</dd>
+                                <dd>商品产地：中国大陆</dd>
+                                <dd>产品指数：10.0-8.0</dd>
+                                <dd>网络连接：支持无线&有线</dd>
+                             
+                            </dl>
+                            <dl class="fl">
+                                <dt></dt>
+                                <dd>店铺：小U直营</dd>
+                                <dd>观看距离：3.0m-4.5m（55-60英寸）</dd>
+                                <dd>电视类型：全面屏，人工智能电视，超薄电视</dd>
+                                <dd>工作电压：220v</dd>
+                             
+                            </dl>
+                        </div>
+                        <div class="header_two">
+                            <div class="item">
+                                <img src="./images/nim2.jpg" alt="">
+                                <div>
+                                    <p> jd732750 <span></span></p>
+                                    <p><span>外形外观：外观没得说，是我喜欢的款，这个颜色清新淡雅</span> <span>2019-11-05</span></p>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <img src="./images/nim2.jpg" alt="">
+                                <div>
+                                    <p> s***y<span></span></p>
+                                    <p><span>刚收到货，不错</span><span>2020-01-21</span></p>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <img src="./images/nim2.jpg" alt="">
+                                <div>
+                                    <p>炎陵服务店<span></span></p>
+                                    <p> <span>整体看起来还行吧</span><span>2020-02-13</span></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="header_two">
+                            <div class="item1">
+                                <h3>厂家服务</h3>
+                                <p>本产品全国联保，享受三包服务，质保期为：一年质保</p>
+                                <p>如因质量问题或故障，凭厂商维修中心或特约维修点的质量检测证明，享受7日内退货，15日内换货，15日以上在质保期内享受免费保修等三包服务！</p>
+                                <p>(注:如厂家在商品介绍中有售后保障的说明,则此商品按照厂家说明执行售后保障服务。) 您可以查询本品牌在各地售后服务中心的联系方式，请点击这儿查询......</p>
+                            </div>
+                            <div class="item1">
+                                <h3>全国联保</h3>
+                                <p>注：因厂家会在没有任何提前通知的情况下更改产品包装、产地或者一些附件，本司不能确保客户收到的货物与商城图片、产地、附件说明完全一致。只能确保为原厂正货！并且保证与当时市场上同样主流新品一致。若本商城没有及时更新，请大家谅解！</p>
+                            </div>
+                            <div class="item1">
+                                <h3>无忧退货</h3>
+                                <p>客户购买商品7日内（含7日，自客户收到商品之日起计算），在保证商品完好的前提下，可无理由退货。（部分商品除外，详情请见各商品细则）</p>
+                            </div>
+                           
+                        </div>
+                     </div>
+                     <div class="two_right_content clearfix">
+                          <div class="content_left fl">
+                              <div class="left_item">
+                                    <div>
+                                        <h3>无后壳式结构</h3>
+                                        <h2>简约精巧，告别笨重</h2>
+                                        <p>G20采用无后壳式结构，这种独特的结构使他的后壳变得简约精巧，不再笨重</p>
+                                        <p>同时也让机身的一体化程度更高，更显轻薄</p>
+                                    </div>
+                                    <div>
+                                        <img src="images/xiangqiangye_34.png" alt="">
+                                    </div>
+                              </div>
+                              <div class="left_item">
+                                <div>
+                                    <h3>墨玉黑边框</h3>
+                                    <h2>深邃墨玉黑，高颜值百搭</h2>
+                                    <p>G20采用深邃而有光泽的墨玉黑边框，瞩目而又与家具环境相得益彰</p>
+                                   
+                                </div>
+                                <div>
+                                    <img src="images/xiangqiangye_37.png" alt="">
+                                </div>
+                              </div>
+                              <div class="left_item">
+                            <div>
+                                <h3>酷开AI系列</h3>
+                                <h2>懂世界更懂你</h2>
+                                <p>酷开AI系统全新智慧升级，基于AI引擎不断学习进化，能更全面的识别用户行为，更懂用户。可根据不同用户的需求</p>
+                                <p>智能调配系统资源，为用户个性化定制恰到好处的智能解决方案，更易用，更省心，更贴心</p>
+                                <div style="margin-top: 26px;"><img src="./images/tu_03.png" alt="">
+                                <p>电视派</p></div>
+                               
+                            </div>
+                            <div>
+                                <img src="images/xiangqiangye_39.png" alt="">
+                            </div>
+                              </div>
+                              <div class="left_item">
+                                    <div>
+                                        <h3>电视派</h3>
+                                        <h2>看电视的新方式</h2>
+                                        <p>告别老旧的调台方式，也告别普通互联网电视繁杂的选择界面</p>
+                                        <p>电视派全新的手机浏览， 一键推送玩法，让看什么不再是困扰</p>
+            
+                                    </div>
+                                    <div>
+                                        <img src="images/xiangqiangye_41.png" alt="">
+                                    </div>
+                              </div>
+                              <div class="content_left_bottom">
+                                  <div><img src="./images/tu_09_03.png" alt=""></div>
+                                  <div class=" zuihou_item clearfix">
+                                      <div class="zuizuo fl">
+                                         <span class="fr">发货时间</span>
+                                      </div>
+                                      <div class="zuiyou fl">
+                                        <p>快递为顺丰速递，一般下单后一个工作日内发出，节假日或者大型活动时间顺延，以具体发货时间为准</p>
+                                      </div>
+
+                                   </div>
+                                   <div class=" zuihou_item clearfix">
+                                    <div class="zuizuo fl">
+                                       <span class="fr">签收事项</span>
+                                    </div>
+                                    <div class="zuiyou fl">
+                                      <p>电视签收前，请务必请快递<span>开箱通电验机</span>，确认屏幕外观完好后签收，如快递拒绝开箱，
+                                    请拒收并联系本店客服处理；因未验机直接签收产生的破损问题，责任人无法划分由客户自行承担</p>
+                                    </div>
+
+                                 </div>
+                                 <div class=" zuihou_item clearfix">
+                                    <div class="zuizuo fl">
+                                       <span class="fr">退货费用</span>
+                                    </div>
+                                    <div class="zuiyou fl">
+                                      <p>若非电视问题，7天无理由退货或拒收，客户需自行承担200/台的退货费用（仅限但不限于退货费用），包装箱费用
+                                          ，电视折旧影响二次销售产生的费用等；拆箱后非质量问题不支持七天无理由退货
+                                      </p>
+                                    </div>
+
+                                 </div>
+                                 <div class=" zuihou_item clearfix">
+                                    <div class="zuizuo fl">
+                                       <span class="fr">安装声明</span>
+                                    </div>
+                                    <div class="zuiyou fl">
+                                      <p><span>订单价格不包含包装费</span>，订单签收后可拨打创维售后电话95105555或4086556预约安装，安装后支付相关安装费用
+                                    （可参考安装收费标准）外包装建议保存30天，以防退换货需要</p>
+                                    </div>
+
+                                 </div>
+                                <div class=" zuihou_item clearfix">
+                                                                <div class="zuizuo fl">
+                                                                <span class="fr">保价服务</span>
+                                                                </div>
+                                                                <div class="zuiyou fl">
+                                                                <p>电视价格随市场价格波动，本店不承诺非保障以外的保价服务</p>
+                                                                </div>
+
+                                 </div>
+                                                        
+                                 <div class=" zuihou_item clearfix">
+                                                            <div class="zuizuo fl">
+                                                            <span class="fr">发票</span>
+                                                            </div>
+                                                            <div class="zuiyou fl">
+                                                            <p>本店开具普通电子发票，客户如需获取电子发票，需在收货后提供电子邮箱，一般在10个工作日
+                                                                内发出。如开具增值税发票，需要提供抬头，开户行，税号，地址，电话，账号等信息
+                                                            </p>
+                                                            <p class="zeng">(专用增值发票为纸质发票，客户确认收货后，联系客服寄出，寄出单号请咨询客服)</p>
+                                                            </div>
+                                 </div>
+                                  
+                              <div class="ender">
+                                   <p><span>安装收费标准：</span></p>
+                                <div><img src="./images/xiangqiangye_44.png" alt=""></div>
+                             </div>
+                             <hr>
+                              </div>
+                             
+
+                          </div>
+                     
+                   
+                              
+                      <div class="content_right fr">
+                                     <div> 
+                                                <div class="content_right_left fl">
+                                                        <span></span>
+                                                        <span></span>
+                                                        <span></span>
+                                                        <span></span>
+                                                        <span></span>
+                                                        <span></span>
+                                                        <span></span>
+                                                        <span></span>
+                                                        <span></span>
+                                                        
+                                                </div>
+                                                <div class="content_right_right fr">
+                                                        <span><a href="javascript:;">产品细节</a></span>
+                                                        <span><a href="javascript:;">产品外观</a></span>
+                                                        <span><a href="javascript:;">AI系统</a></span>
+                                                        <span><a href="javascript:;">使用方法</a></span>
+                                                        <span><a href="javascript:;">温馨提示</a></span>
+                                         </div>
+                                   </div>
+                      
+                       </div>
+                       
+                    </div>
+
+                </div>
+                       
+                          
+                    </div>
+                </div>
+             </div>
+                      
+              
+            
+  <!-- 这是尾部开始 -->
+             <div class="foot">
+                <div class="foot_top clearfix">
+                            <dl class="fl">
+                                <dt><a href="javascript:;" target="_self">购物指南</a></dt>
+                                <dd><a href="javascript:;" target="_self">购物流程</a></dd>
+                                <dd><a href="javascript:;" target="_self">支付方式</a></dd>
+                                <dd><a href="javascript:;" target="_self">配送方式</a></dd>
+                            </dl>
+                            <dl class="fl">
+                                <dt><a href="javascript:;" target="_self">售后服务</a></dt>
+                                <dd><a href="javascript:;" target="_self">售后方式</a></dd>
+                                <dd><a href="javascript:;" target="_self">价格保护</a></dd>
+                                <dd><a href="javascript:;" target="_self">价格说明</a></dd>
+                                <dd><a href="javascript:;" target="_self">返修/退换货</a></dd>
+                                <dd><a href="javascript:;" target="_self">取消订单</a></dd>
+                                
+                            </dl>
+                            <dl class="fl">
+                                <dt><a href="javascript:;" target="_self">配送方式</a></dt>
+                                <dd><a href="javascript:;" target="_self">211限时达</a></dd>
+                                <dd><a href="javascript:;" target="_self">配送服务查询</a></dd>
+                                <dd><a href="javascript:;" target="_self">配送费收取标准</a></dd>
+                                <dd><a href="javascript:;" target="_self">海外配送</a></dd>
+                                
+                            </dl>
+                            <dl class="fl">
+                                <dt><a href="javascript:;" target="_self">支付方式</a></dt>
+                                <dd><a href="javascript:;" target="_self">支付宝支付</a></dd>
+                                <dd><a href="javascript:;" target="_self">网上支付</a></dd>
+                                <dd><a href="javascript:;" target="_self">邮件汇款</a></dd>
+                                
+                            </dl>
+                            <dl class="fl">
+                                <dt><a href="javascript:;" target="_self">用户帮助</a></dt>
+                                <dd><a href="javascript:;" target="_self">免费注册</a></dd>
+                                <dd><a href="javascript:;" target="_self">找回密码</a></dd>
+                                <dd><a href="javascript:;" target="_self">常见问题</a></dd>
+                                <dd><a href="javascript:;" target="_self">优惠卷使用</a></dd>
+                                
+                            </dl>
+                </div>
+                <hr>
+                <p>copyright&copy;2010-2016 小u商城 版权所有 保留一切权利 </p>
+                <p>京ICP备20182138号 京ICP证161188号 京公安网备108364524245 出版物经营许可证新出发京批字第直130052号</p>
+
+               </div>
+            <!-- 这是尾部结束 -->
+    </div>
+</body>
+</html>

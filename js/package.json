@@ -1,0 +1,5 @@
+{
+  "devDependencies": {
+    "svg-captcha": "^1.4.0"
+  }
+}

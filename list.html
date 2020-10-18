@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>列表页</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/iconfont.css">
+    <link rel="stylesheet" href="css/list.css">
+    <link rel="stylesheet" href="css/index.css">
+    <script src="./js/jquery.js"></script>
+    <script src="./js/art-template.js"></script>
+    <script src="./js/ajax.js"></script>
+    <!-- <script src="./js/index.js"></script> -->
+    <script src="./js/list.js"></script>
+</head>
+<body>
+    <div class="wrap">
+        <div class="box">
+           <!-- 这是导航开始 -->
+           <div class="nav " name="nav">
+               <div class="navbox">
+                     <!-- 导航左边 -->
+            <ul class="left fl">
+                <li><a href="javascript:;" target="_self">网站导航<span class="iconfont icon-xiangxiajiantou"></span></a></li>
+                <li><a href="javascript:;" target="_self">商家入驻<span class="iconfont icon-xiangxiajiantou"></span></a></li>
+                <li><a href="javascript:;" target="_self">客户服务<span class="iconfont icon-xiangxiajiantou"></span></a></li>
+                <li><a href="javascript:;" target="_self"><span class="iconfont icon-icon-test"></span>北京<span class="iconfont icon-arrow_down_full"></span></a></li>
+            </ul>
+            <!-- 导航右边 -->
+            <ul class="right fr">  
+                <li><a href="javascript:;" target="_self">手机小u<span class="iconfont icon-xiangxiajiantou"></span></a></li>
+                <li><a href="javascript:;" target="_self">企业采购</a></li>
+                <li><a href="javascript:;" target="_self">易付宝</a></li>
+                <li><a href="javascript:;" target="_self" class="color"><span class="iconfont icon-gouwuche"></span>购物车0<span class="iconfont color icon-xiangxiajiantou"></span></a></li>
+                <li><a href="javascript:;" target="_self">小u会员</a></li>
+                <li><a href="javascript:;" target="_self">我的易购<span class="iconfont icon-xiangxiajiantou"></span></a></li>
+                <li><a href="javascript:;" target="_self">我的订单<span class="iconfont icon-xiangxiajiantou"></span></a></li>
+                <li><a href="javascript:;" target="_self" class="color">注册有礼</a></li>
+                <li><a href="javascript:;" target="_self">请登录</a></li>
+            
+            </ul>
+  
+               </div>
+          
+           </div>
+        <!-- 这是导航结束 -->
+        <!-- 这是头部开始 -->
+           <div class="head">
+            <!-- 头部顶端 -->
+            <div class="top">
+                <div class="left">
+                     <h1><a href="javascript:;" title="小u商城">小U商城-低价正品，品质保证</a></h1>
+                </div>
+                <div class="right"> 
+                    <div class="input">
+                        <div class="iconfont icon-sousuo"></div>
+                        <form action="javascript:;"> <input type="text" value="跨店满300减30"><button>搜索</button></form>
+                       
+                    </div> 
+                    <div class="wen"></div>
+                    <script type="text/html" id="search_hot">
+                       {{each data }}
+                       <span><a href="javascript:;">{{$value.search_text}}</a></span>
+                       {{/each}}
+                   </script>    
+                </div>           
+            </div>
+            <!-- 头部底端 -->
+            <div class="bottom">
+                <ul class="clearfix">
+                    <li class="li1"><a href="javascript:;" target="_self"><span class="iconfont icon-liebiao"></span>全部商品分类</a>
+                        <div class="hover active">  </div>
+                                <!-- <p><a href="javascript:;" target="_self">手机</a><a href="javascript:;" target="_self">运营商</a><a href="javascript:;" target="_self">智能数码</a></p>
+                                -->
+                          <script type="text/html" id="yijidaohang">
+                            {{each data }}
+                            <a href="javascript:;">{{$value.first_name}}</a>
+                            {{/each}}
+                        </script>
+
+                    </li>
+                    <li><a href="javascript:;" target="_self">限时抢购</a></li>
+                    <li><a href="javascript:;" target="_self">红孩子</a></li>
+                    <li><a href="javascript:;" target="_self">小u超市</a></li>
+                    <li><a href="javascript:;" target="_self">生活家电</a></li>
+                    <li><a href="javascript:;" target="_self">时装服饰</a></li>
+                    <li><a href="javascript:;" target="_self">金融</a></li>
+                    
+                </ul>
+                
+
+            </div>
+           </div>
+           <hr> 
+        <!-- 这是内容开始 -->
+            <div class="content">
+                <div class="content_box">
+                <div class="list_cont_one">
+                    <p>
+                        <a href="javascript:;" target="_self">首页</a>
+                        <span>></span>
+                        <a href="javascript:;" target="_self">家用电器</a>
+                        <span>></span>
+                        <span>  年份季节2020年春季<a href="javascript:;" target="_self"><span>x</span></a></span>
+                    </p>
+                    <div class="list_one">
+                        <div class="one_item clearfix">
+                            <div class="one_left fl">
+                                <div class="fl"><span>></span>一级分类</div>
+                                <div class="pingpai">
+                                    <script type="text/html" id="ping">
+                                        {{each data}}
+                                        <span data-id={{$value.first_id}}><a href="javascript:;" target="_self">{{$value.first_name}}</a></span>
+                                        {{/each}}
+                                    </script>
+                                </div>
+                                </div>
+                                <div class="one_right fr">
+                                    <span><a href="javascript:;" target="_self">更多<span class="iconfont icon-xiangxiajiantou"></span></a></span>
+                                </div>
+                        </div>
+                        <div class="one_item clearfix">
+                            <div class="one_left fl">
+                                <div class="fl"><span>></span>二级分类</div>
+                                <div class="erji">
+                                    <script type="text/html" id="erjifenlei">
+                                        {{each data}}
+                                    <span data-id={{$value.second_id}}><a href="javascript:;" target="_self">{{$value.second_name}}</a></span>
+                                        {{/each}}
+                                    </script>
+                                </div>
+                            </div>
+                            <div class="one_right fr">
+                                <span><a href="javascript:;" target="_self">更多<span class="iconfont icon-xiangxiajiantou"></span></a></span>
+                        </div>
+                        </div>
+                        <div class="one_item clearfix">
+                            <div class="one_left fl">
+                                <div class="fl"><span>></span>三级分类</div>
+                                <div class="sanjifen">
+                                    <script type="text/html" id="sanjifenlei">
+                                        {{each data}}
+                                    <span data-id={{$value.thired_id}}><a href="javascript:;" target="_self">{{$value.thired_name}}</a></span>
+                                        {{/each}}
+                                    </script>
+                                </div>
+                            </div>
+                            <div class="one_right fr">
+                                <span><a href="javascript:;" target="_self">更多<span class="iconfont icon-xiangxiajiantou"></span></a></span>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 商品详情 -->
+                <div class="list_cont_two">
+                    <div class="box_wrap"></div>
+                    <script type="text/html" id="xiangqingfen">
+                    <div class="two_left fl">
+                    <div class="two_box">
+                        <h3>商品推荐</h3>
+                            {{each data}}
+                            <div class="two_item">
+                                <div><img src={{$value.image_url}} alt="">
+                                </div><p>{{$value.goods_name}}</p>
+                                <span class='num'>￥{{$value.goods_price}}</span> 
+                            </div>
+                            {{/each}}
+                    </div>
+                </div>
+                <div class="two_right fr">
+                    <div class="two_head">
+                        <div class="two_head_left fl">
+                            <span><a href="javascript:;" target="_self">综合</a></span>
+                        <span><a href="javascript:;" target="_self">新品</a></span>
+                        <span><a href="javascript:;" target="_self">销量<span></span></a></span>
+                        <span><a href="javascript:;" target="_self">价格<span></span></a></span>
+                        </div>
+                        <div class="two_head_right fr">
+                            <p>共614件商品
+                                <span class="jiantou"><a href="javascript:;" target="_self"><</a></span>
+                                <span class="bianse">1</span>
+                                <span>/</span>
+                                <span>11</span>
+                                <span class="jiantou"><a href="javascript:;" target="_self">></a></span>
+                                </p>
+                        </div> 
+                    </div>
+                    <div class="two_middle clearfix">
+                           <!-- 右侧商品详情 -->
+                            {{each data}}
+                            <div class="two_middle_item fl">
+                                <a href="javascript:;" target="_self">
+                                    <img src={{$value.image_url}} alt="">
+                                    <span>￥{{$value.goods_price}}</span>
+                                    <p>{{$value.goods_name}}</p>
+                                    <p class='bu'><span>不要错过！不要辜负！</span></p>
+                                    <p>已有<span class='num'>{{$value.evalNum}}万</span>人评价</p>
+                                    <p class='jiase'><span class="iconfont icon-gouwuche"></span></span></span><span >加入购物车</span><span>收藏<span class="iconfont icon-xin"></span></span></p>
+                                </a>
+                            </div>
+                            {{/each}}
+                            <!-- 下一页 -->
+                            <div class='ffff'>
+                                 <div class="two_foot">
+                                <div class="clearfix">
+                                    <span class="nomargin fl"></span>
+                                    <span class="nomargin fl"></span>
+                                    <span class="nomargin fl"><a href="javascript:;" target="_self">1</a></span>
+                                </div>
+                            <span ><a href="javascript:;" target="_self">2</a></span></span>
+                            <span><a href="javascript:;" target="_self">3</a></span></span>
+                            <span><a href="javascript:;" target="_self">4</a></span></span>
+                            <span><a href="javascript:;" target="_self">5</a></span></span>
+                            <span class="noborder"><a href="javascript:;" target="_self">...</a></span>
+                            <span><a href="javascript:;" target="_self">下一页</a></span></span>
+                            </div>
+                         </div>
+                            </div>
+                           
+                        </script>
+                    </div>
+                   
+                </div>
+            </div>
+        <!-- 这是内容结束 -->
+        <!-- 这是尾部开始 -->
+        <div class="foot">
+            <div class="foot_top clearfix">
+                        <dl class="fl">
+                            <dt><a href="javascript:;" target="_self">购物指南</a></dt>
+                            <dd><a href="javascript:;" target="_self">购物流程</a></dd>
+                            <dd><a href="javascript:;" target="_self">支付方式</a></dd>
+                            <dd><a href="javascript:;" target="_self">配送方式</a></dd>
+                        </dl>
+                        <dl class="fl">
+                            <dt><a href="javascript:;" target="_self">售后服务</a></dt>
+                            <dd><a href="javascript:;" target="_self">售后方式</a></dd>
+                            <dd><a href="javascript:;" target="_self">价格保护</a></dd>
+                            <dd><a href="javascript:;" target="_self">价格说明</a></dd>
+                            <dd><a href="javascript:;" target="_self">返修/退换货</a></dd>
+                            <dd><a href="javascript:;" target="_self">取消订单</a></dd>
+                            
+                        </dl>
+                        <dl class="fl">
+                            <dt><a href="javascript:;" target="_self">配送方式</a></dt>
+                            <dd><a href="javascript:;" target="_self">211限时达</a></dd>
+                            <dd><a href="javascript:;" target="_self">配送服务查询</a></dd>
+                            <dd><a href="javascript:;" target="_self">配送费收取标准</a></dd>
+                            <dd><a href="javascript:;" target="_self">海外配送</a></dd>
+                            
+                        </dl>
+                        <dl class="fl">
+                            <dt><a href="javascript:;" target="_self">支付方式</a></dt>
+                            <dd><a href="javascript:;" target="_self">支付宝支付</a></dd>
+                            <dd><a href="javascript:;" target="_self">网上支付</a></dd>
+                            <dd><a href="javascript:;" target="_self">邮件汇款</a></dd>
+                            
+                        </dl>
+                        <dl class="fl">
+                            <dt><a href="javascript:;" target="_self">用户帮助</a></dt>
+                            <dd><a href="javascript:;" target="_self">免费注册</a></dd>
+                            <dd><a href="javascript:;" target="_self">找回密码</a></dd>
+                            <dd><a href="javascript:;" target="_self">常见问题</a></dd>
+                            <dd><a href="javascript:;" target="_self">优惠卷使用</a></dd>
+                            
+                        </dl>
+            </div>
+            <hr>
+            <p>copyright&copy;2010-2016 小u商城 版权所有 保留一切权利 </p>
+            <p>京ICP备20182138号 京ICP证161188号 京公安网备108364524245 出版物经营许可证新出发京批字第直130052号</p>
+
+        </div>
+        <!-- 这是尾部结束 -->
+        </div>
+    </div>
+</body>
+</html>

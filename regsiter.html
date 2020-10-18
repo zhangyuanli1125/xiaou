@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>注册</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/regsiter.css">
+    <link rel="stylesheet" href="css/iconfont.css">
+    <script src="./js/jquery.js"></script>
+    <script src="./js/regsiter.js"></script>
+</head>
+<body>
+    <div class="wrap">
+        <div class="head">
+              <img src="images/xiaou.jpg" alt="logo">
+              <span></span>
+              <p>欢迎注册</p>
+        </div>
+        <div class="body">
+            <div class="form_box">
+                <div class="box1">
+                    <h3>注册账号</h3>
+                    <div class="clearfix text">
+                        <span class="fl iconfont icon-email"></span><input type="text" placeholder="请输入邮箱" class="fl uname" name="uname">
+                    </div>
+                    <p>请输入邮箱</p>
+                    <div class="clearfix text2 text active">
+                        <span class="fl iconfont icon-suo"></span><input type="password" placeholder="请输入密码" class="fl upass" name="upass">  
+                    </div>
+                    <p>请输入密码</p>
+                    <div class="text2 text text3">
+                        <input type="text" placeholder="请输入验证码" class="code"><span class="sp"><img src="http://localhost:3001/user/svg" alt=""></span>
+                        <p>请输入验证码</p>
+                    </div>
+                    <button class="btn"><a href="javascript:;">注册</a> </button>
+                    <p>已有账号<a href="javascript:;">去登陆</a></p>
+                </div>
+            </div>
+        </div>
+        <div class="foot">
+            <p>copyright&copy;2010-2016 小u商城 版权所有 保留一切权利 </p>
+            <p>京ICP备20182138号 京ICP证161188号 京公安网备108364524245 出版物经营许可证新出发京批字第直130052号</p>
+        </div>
+    </div>
+    <script>
+        $('.sp img').on('click',function(){
+            this.src=`http://localhost:3001/user/svg?id=${new Date().getTime()}`
+        })
+        $('.btn a').on('click',function(){
+            let uname=$('.uname').val()
+            let upass=$('.upass').val()
+            let code=$('.code').val()
+            $.ajax({
+                 type:'post',
+                 url:"http://localhost:3001/user/register",
+                 data:{
+                     uname,
+                     upass,
+                     code
+                 },
+                 xhrFields:{
+                    withCredentials: true
+                 },
+                 success:function(response){
+                     console.log(response);
+                    if (response.code) {
+                        alert(response.msg)
+                    } else {
+                        location.href = "./login.html"
+                    }
+                }
+            })
+        })
+    </script>
+</body>
+</html>
